@@ -6,6 +6,7 @@ nav {
     color: white;
     justify-content: space-between;
     align-items: center;
+    transition: height 0.3s ease-in-out; /* Add transition for smooth animation */
 }
 
 .navbar-left {
@@ -63,5 +64,38 @@ nav {
     }
     50% {
         border-color: white;
+    }
+}
+
+.hamburger {
+    display: none;
+}
+
+.cross {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .navbar-right {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+
+    /* Add styles for responsive menu */
+    .navbar-right.show {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #212121;
+        padding-top: 75px;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(0);
+        z-index: 1001;
     }
 }
